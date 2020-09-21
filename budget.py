@@ -9,3 +9,6 @@ class Budget(object):
 
     def first_day(self):
         return datetime.strptime(self.year_month, '%Y%m').date()
+
+    def last_day(self):
+        return date(2020, 4, 30)
