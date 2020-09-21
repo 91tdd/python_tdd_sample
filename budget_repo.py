@@ -1,2 +1,7 @@
-def get_budgets() -> list:
+from typing import List
+
+from budget import Budget
+
+
+def get_budgets() -> List[Budget]:
     return []
