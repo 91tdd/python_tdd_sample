@@ -1,3 +1,4 @@
+import calendar
 from datetime import date, datetime
 
 
@@ -11,4 +12,9 @@ class Budget(object):
         return datetime.strptime(self.year_month, '%Y%m').date()
 
     def last_day(self):
-        return date(2020, 4, 30)
+        first_day = self.first_day()
+        year = first_day.year
+        month = first_day.month
+        days_in_month = calendar.monthrange(year, month)[1]
+        return date(year, month, days_in_month)
+        # return date(2020, 4, 30)
