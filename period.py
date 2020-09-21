@@ -4,7 +4,7 @@ class Period(object):
         self.end = end
 
     def overlapping_days(self, another_period):
-        if self.is_valid() or self.without_overlapping(another_period):
+        if self.is_valid or self.without_overlapping(another_period):
             return 0
 
         overlapping_start = self.start if self.start > another_period.start else another_period.start
@@ -12,6 +12,7 @@ class Period(object):
         delta = overlapping_end - overlapping_start
         return delta.days + 1
 
+    @property
     def is_valid(self):
         return self.start > self.end
 
