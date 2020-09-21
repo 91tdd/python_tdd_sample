@@ -9,4 +9,3 @@ class Budget(object):
 
     def first_day(self):
         return datetime.strptime(self.year_month, '%Y%m').date()
-        # return date(2020, 4, 1)
