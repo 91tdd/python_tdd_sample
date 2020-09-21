@@ -26,3 +26,6 @@ class Budget(object):
 
     def daily_amount(self):
         return self.amount / self.total_days()
+
+    def overlapping_amount(self, period):
+        return period.overlapping_days(self.create_period()) * self.daily_amount()
