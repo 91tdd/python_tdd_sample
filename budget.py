@@ -30,3 +30,7 @@ class Budget(object):
         month = first_day.month
         days_in_month = calendar.monthrange(year, month)[1]
         return days_in_month
+
+    def daily_amount(self):
+        daily_amount = self.amount / self.total_days()
+        return daily_amount
