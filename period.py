@@ -6,9 +6,8 @@ class Period(object):
     def overlapping_days(self, budget):
         if self.end < budget.first_day() or self.start > budget.last_day():
             return 0
-        return self.interval_days(self)
+        return self.interval_days()
 
-    @staticmethod
-    def interval_days(period):
-        delta = period.start - period.end
+    def interval_days(self):
+        delta = self.start - self.end
         return delta.days + 1
