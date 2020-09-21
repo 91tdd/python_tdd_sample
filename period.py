@@ -8,5 +8,5 @@ class Period(object):
             return 0
         overlapping_start = self.start if self.start > another_period.start else another_period.start
         overlapping_end = self.end if self.end < another_period.end else another_period.end
-        delta = overlapping_start - overlapping_end
+        delta = overlapping_end - overlapping_start
         return delta.days + 1
