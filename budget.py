@@ -17,4 +17,3 @@ class Budget(object):
         month = first_day.month
         days_in_month = calendar.monthrange(year, month)[1]
         return date(year, month, days_in_month)
-        # return date(2020, 4, 30)

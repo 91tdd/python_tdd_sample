@@ -7,9 +7,10 @@ class BudgetService(object):
         budgets = get_budgets()
         if len(budgets) > 0:
             period = Period(start, end)
-            if period.end < budgets[0].first_day():
+            budget = budgets[0]
+            if period.end < budget.first_day():
                 return 0
-            if period.start > budgets[0].last_day():
+            if period.start > budget.last_day():
                 return 0
             return self.interval_days(period)
         return 0
