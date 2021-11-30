@@ -12,5 +12,5 @@ class BudgetService:
     def total_amount(self, start: date, end: date):
         budgets = get_budgets()
         if len(budgets) > 0:
-            return 30
+            return budgets[0].amount
         return 0
