@@ -2,14 +2,8 @@ import unittest
 from datetime import date
 from unittest.mock import patch
 
+from src.budget import Budget
 from src.budget_service import BudgetService
-
-
-class Budget:
-    def __init__(self, year_month, amount) -> None:
-        super().__init__()
-        self.amount = amount
-        self.year_month = year_month
 
 
 class BudgetServiceTests(unittest.TestCase):
