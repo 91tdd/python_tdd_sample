@@ -4,7 +4,7 @@ from datetime import date
 
 class BudgetService:
     def total_amount(self, start: date, end: date):
-        pass
+        return 0
 
 
 class BudgetServiceTests(unittest.TestCase):
