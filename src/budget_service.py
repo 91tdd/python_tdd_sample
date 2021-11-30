@@ -14,6 +14,7 @@ class BudgetService:
         budgets = get_budgets()
         if len(budgets) > 0:
             budget = budgets[0]
+            daily_amount = budget.amount / budget.days()
             period = Period(start, end)
-            return period.get_overlapping_days(budget.create_period())
+            return period.get_overlapping_days(budget.create_period()) * daily_amount
         return 0

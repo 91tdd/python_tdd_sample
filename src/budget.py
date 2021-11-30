@@ -21,3 +21,6 @@ class Budget:
 
     def create_period(self):
         return Period(self.first_day(), self.last_day())
+
+    def days(self):
+        return 30
