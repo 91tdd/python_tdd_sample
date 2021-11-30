@@ -16,6 +16,7 @@ class BudgetService:
             if start > budget.last_day() or end < budget.first_day():
                 return 0
             overlapping_start = start if start > budget.first_day() else budget.first_day()
-            delta = end - overlapping_start
+            overlapping_end = end if end < budget.last_day() else budget.last_day()
+            delta = overlapping_end - overlapping_start
             return delta.days + 1
         return 0
