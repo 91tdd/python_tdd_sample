@@ -14,5 +14,4 @@ class BudgetService:
         if len(budgets) > 0:
             delta = end - start
             return delta.days + 1
-            # return budgets[0].amount
         return 0
