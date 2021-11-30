@@ -13,10 +13,10 @@ class BudgetService:
         budgets = get_budgets()
         if len(budgets) > 0:
             budget = budgets[0]
-            return self.get_overlapping_days(budget, end, start)
+            return self.get_overlapping_days(budget, start, end)
         return 0
 
-    def get_overlapping_days(self, budget, end, start):
+    def get_overlapping_days(self, budget, start, end):
         if start > budget.last_day() or end < budget.first_day():
             return 0
         else:
