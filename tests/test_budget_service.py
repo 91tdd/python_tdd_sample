@@ -1,18 +1,23 @@
 import unittest
 from datetime import date
 
-
-class BudgetService:
-    def total_amount(self, start: date, end: date):
-        return 0
+from src.budget_service import BudgetService
 
 
 class BudgetServiceTests(unittest.TestCase):
+    def setUp(self):
+        self.budget_service = BudgetService()
+
     def test_no_budgets(self):
-        budget_service = BudgetService()
-        self.assertEqual(0, budget_service.total_amount(
+        self.total_amount_should_be(
             date(2020, 4, 1),
             date(2020, 4, 1),
+            0)
+
+    def total_amount_should_be(self, start, end, expected):
+        self.assertEqual(expected, self.budget_service.total_amount(
+            start,
+            end,
         ))
 
 
