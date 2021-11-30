@@ -24,3 +24,6 @@ class Budget:
 
     def days(self):
         return calendar.monthrange(self.first_day().year, self.first_day().month)[1]
+
+    def daily_amount(self):
+        return self.amount / self.days()
