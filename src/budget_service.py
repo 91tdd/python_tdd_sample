@@ -15,9 +15,6 @@ class BudgetService:
         if len(budgets) > 0:
             budget = budgets[0]
             period = Period(start, end)
-            another = self.create_period(budget)
+            another = budget.create_period()
             return period.get_overlapping_days(another)
         return 0
-
-    def create_period(self, budget):
-        return Period(budget.first_day(), budget.last_day())

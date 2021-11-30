@@ -1,6 +1,8 @@
 import calendar
 from datetime import date, datetime
 
+from src.period import Period
+
 
 class Budget:
     def __init__(self, year_month, amount) -> None:
@@ -16,3 +18,6 @@ class Budget:
         month = self.first_day().month
         days_in_month = calendar.monthrange(year, month)[1]
         return date(year, month, days_in_month)
+
+    def create_period(self):
+        return Period(self.first_day(), self.last_day())
