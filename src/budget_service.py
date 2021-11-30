@@ -11,11 +11,5 @@ def get_budgets() -> List[Budget]:
 
 class BudgetService:
     def total_amount(self, start: date, end: date):
-        budgets = get_budgets()
         period = Period(start, end)
-        return sum(budget.overlapping_amount(period) for budget in budgets)
-        # if len(budgets) > 0:
-        #     budget = budgets[0]
-        #     period = Period(start, end)
-        #     return budget.overlapping_amount(period)
-        # return 0
+        return sum(budget.overlapping_amount(period) for budget in (get_budgets()))
