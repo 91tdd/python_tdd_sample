@@ -5,9 +5,7 @@ class Period:
         self.start = start
 
     def get_overlapping_days(self, another):
-        if self.is_invalid():
-            return 0
-        if self.no_overlap(another):
+        if self.is_invalid() or self.no_overlap(another):
             return 0
         overlapping_start = self.start if self.start > another.start else another.start
         overlapping_end = self.end if self.end < another.end else another.end
