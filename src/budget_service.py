@@ -25,8 +25,8 @@ class BudgetService:
 
     def get_overlapping_days(self, budget, start, end):
         period = Period(start, end)
-        temp_start = start
-        temp_end = end
+        temp_start = period.start
+        temp_end = period.end
         if temp_start > budget.last_day() or temp_end < budget.first_day():
             return 0
         else:
