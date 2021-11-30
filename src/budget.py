@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 
 class Budget:
@@ -8,4 +8,4 @@ class Budget:
         self.year_month = year_month
 
     def first_day(self):
-        return date(2020, 4, 1)
+        return datetime.strptime(self.year_month, '%Y%m').date()
