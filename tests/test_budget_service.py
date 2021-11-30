@@ -53,6 +53,13 @@ class BudgetServiceTests(unittest.TestCase):
             date(2020, 4, 3),
             3)
 
+    def test_period_overlap_budget_last_day(self):
+        self.fake_get_budgets.return_value = [Budget('202004', 30)]
+        self.total_amount_should_be(
+            date(2020, 4, 29),
+            date(2020, 5, 3),
+            2)
+
     def total_amount_should_be(self, start, end, expected):
         self.assertEqual(expected, self.budget_service.total_amount(
             start,
