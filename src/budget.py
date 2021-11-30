@@ -14,10 +14,10 @@ class Budget:
         return datetime.strptime(self.year_month, '%Y%m').date()
 
     def last_day(self):
-        year = self.first_day().year
-        month = self.first_day().month
-        days_in_month = calendar.monthrange(year, month)[1]
-        return date(year, month, days_in_month)
+        first_day = self.first_day()
+        year = first_day.year
+        month = first_day.month
+        return date(year, month, self.days())
 
     def create_period(self):
         return Period(self.first_day(), self.last_day())
