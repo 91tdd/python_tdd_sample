@@ -74,6 +74,17 @@ class BudgetServiceTests(unittest.TestCase):
             date(2020, 4, 6),
             40)
 
+    def test_multiple_budgets(self):
+        self.fake_get_budgets.return_value = [
+            Budget('202003', 31),
+            Budget('202004', 300),
+            Budget('202005', 3100),
+        ]
+        self.total_amount_should_be(
+            date(2020, 3, 31),
+            date(2020, 5, 6),
+            1 + 300 + 600)
+
     def total_amount_should_be(self, start, end, expected):
         self.assertEqual(expected, self.budget_service.total_amount(
             start,
