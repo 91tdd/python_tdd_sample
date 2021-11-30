@@ -23,4 +23,4 @@ class Budget:
         return Period(self.first_day(), self.last_day())
 
     def days(self):
-        return 30
+        return calendar.monthrange(self.first_day().year, self.first_day().month)[1]
