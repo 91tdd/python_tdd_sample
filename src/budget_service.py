@@ -2,17 +2,11 @@ from datetime import date
 from typing import List
 
 from src.budget import Budget
+from src.period import Period
 
 
 def get_budgets() -> List[Budget]:
     pass
-
-
-class Period:
-    def __init__(self, start, end) -> None:
-        super().__init__()
-        self.end = end
-        self.start = start
 
 
 class BudgetService:
