@@ -1,9 +1,19 @@
 import unittest
+from datetime import date
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+class BudgetService:
+    def total_amount(self, start: date, end: date):
+        pass
+
+
+class BudgetServiceTests(unittest.TestCase):
+    def test_no_budgets(self):
+        budget_service = BudgetService()
+        self.assertEqual(0, budget_service.total_amount(
+            date(2020, 4, 1),
+            date(2020, 4, 1),
+        ))
 
 
 if __name__ == '__main__':
